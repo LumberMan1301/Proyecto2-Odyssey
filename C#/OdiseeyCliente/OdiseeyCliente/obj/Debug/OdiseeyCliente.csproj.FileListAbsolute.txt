@@ -1,0 +1,10 @@
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\OdiseeyCliente\OdiseeyCliente\bin\Debug\OdiseeyCliente.exe.config
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\OdiseeyCliente\OdiseeyCliente\bin\Debug\OdiseeyCliente.exe
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\OdiseeyCliente\OdiseeyCliente\bin\Debug\OdiseeyCliente.pdb
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\OdiseeyCliente\OdiseeyCliente\obj\Debug\OdiseeyCliente.csprojResolveAssemblyReference.cache
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\OdiseeyCliente\OdiseeyCliente\obj\Debug\OdiseeyCliente.Form1.resources
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\OdiseeyCliente\OdiseeyCliente\obj\Debug\OdiseeyCliente.Properties.Resources.resources
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\OdiseeyCliente\OdiseeyCliente\obj\Debug\OdiseeyCliente.csproj.GenerateResource.cache
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\OdiseeyCliente\OdiseeyCliente\obj\Debug\OdiseeyCliente.csproj.CoreCompileInputs.cache
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\OdiseeyCliente\OdiseeyCliente\obj\Debug\OdiseeyCliente.exe
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\OdiseeyCliente\OdiseeyCliente\obj\Debug\OdiseeyCliente.pdb
