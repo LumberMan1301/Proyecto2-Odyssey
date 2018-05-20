@@ -1,162 +1,301 @@
-/**
 package Odyssey.Estructuras.Arboles.BTree;
 
-public class BTree<Key extends Comparable<Key>, Value>
+//-----------------------------------------------------------------------
+//this will be the BTree class which all methods being performed on tree|
+//are located. This will call methods in BNode.java and the methods in  |
+//this class will be used to do operations on a tree object.            |                                                                                      |
+//-----------------------------------------------------------------------
+//This is class project for CS380 Data Structures and Algorithm Analysis|
+//the basic format of this program is derived from class notes and      |
+//psuedocode in Intoduction to Algorithms, 2nd Edition, Cormen et.al.   |
+//MIT Press, Cambridge.                                                 |
+//Jeremy Phelps and Kris                                                |
+//-----------------------------------------------------------------------
+
+public class BTree
 {
-  public static final int m = 4;
-  public Node root;
-  public int height;
-  public int n;
 
-  private static final class Node
-  {
-    public int m;
-    public BTree.Entry[] children = new BTree.Entry[4];
+// here are variables available to tree
 
-    public Node(int k) { m = k; }
-  }
+	static int order; // order of tree
 
-  private static class Entry
-  {
-    public Comparable key;
-    public final Object val;
-    public BTree.Node next;
-
-    public Entry(Comparable key, Object val, BTree.Node next) {
-      this.key = key;
-      this.val = val;
-      this.next = next;
-    }
-  }
-
-  public BTree()
-  {
-    root = new Node(0);
-  }
-
-  public boolean isEmpty()
-  {
-    return size() == 0;
-  }
-
-  public int size()
-  {
-    return n;
-  }
-
-  public int height()
-  {
-    return height;
-  }
+	BNode root;  //every tree has at least a root node
 
 
-  public Value getElement(Key key)
-  {
-    if (key == null) throw new IllegalArgumentException("Insertar Elemento");
-    return search(root, key, height);
-  }
-  
-  private Value search(Node x, Key key, int ht) {
-    Entry[] children = children;
-
-    if (ht == 0) {
-      for (int j = 0; j < m; j++) {
-        if (eq(key, key)) { return val;
-        }
-
-      }
-    } else {
-      for (int j = 0; j < m; j++) {
-        if ((j + 1 == m) || (less(key, key)))
-          return search(next, key, ht - 1);
-      }
-    }
-    return null;
-  }
+// ---------------------------------------------------------
+// here is the constructor for tree                        |
+// ---------------------------------------------------------
 
 
-  public void insert(Key key, Value val)
-  {
-    if (key == null) throw new IllegalArgumentException("argument key to put() is null");
-    Node u = insert(root, key, val, height);
-    n += 1;
-    if (u == null) { return;
-    }
-    Node t = new Node(2);
-    children[0] = new Entry(root.children[0].key, null, root);
-    children[1] = new Entry(children[0].key, null, u);
-    root = t;
-    height += 1;
-  }
+	public BTree(int order)
+	{
+		this.order = order;
 
-  private Node insert(Node h, Key key, Value val, int ht)
-  {
-    Entry t = new Entry(key, val, null);
-    int j;
-    if (ht == 0) {
-      for (int j = 0; j < m; j++) {
-        if (less(key, children[j].key)) {
-          break;
-        }
-      }
-    } else {
-      for (j = 0; j < m; j++) {
-        if ((j + 1 == m) || (less(key, children[(j + 1)].key))) {
-          Node u = insert(children[(j++)].next, key, val, ht - 1);
-          if (u == null) return null;
-          key = children[0].key;
-          next = u;
-          break;
-        }
-      }
-    }
+		root = new BNode(order, null);
 
-    for (int i = m; i > j; i--)
-      children[i] = children[(i - 1)];
-    children[j] = t;
-    m += 1;
-    if (m < 4) return null;
-    return split(h);
-  }
+	}
 
-  private Node split(Node h) {
-    Node t = new Node(2);
-    m = 2;
-    for (int j = 0; j < 2; j++)
-      children[j] = children[(2 + j)];
-    return t;
-  }
 
-  public String getStringToPrint() {
-    return toString(root, height, "") + "\n";
-  }
+// --------------------------------------------------------
+// this will be method to search for a given node where   |
+// we want to insert a key value. this method is called   |
+// from SearchnPrintNode.  It returns a node with key     |
+// value in it                                            |
+// --------------------------------------------------------
 
-  private String toString(Node h, int ht, String indent) {
-    StringBuilder s = new StringBuilder();
-    Entry[] children = children;
 
-    if (ht == 0) {
-      for (int j = 0; j < m; j++) {
-        s.append(indent + key + " " + val + "\n");
-      }
+	public BNode search(BNode root, int key)
+	{
+		int i = 0;//we always want to start searching the 0th index of node.
 
-    } else {
-      for (int j = 0; j < m; j++) {
-        if (j > 0) s.append(indent + "(" + key + ")\n");
-        s.append(toString(next, ht - 1, indent + "     "));
-      }
-    }
-    return s.toString();
-  }
+		while(i < root.count && key > root.key[i])//keep incrementing
+                    							  //in node while key >
+				                    			  //current value.
+		{
+			i++;
+		}
 
-  private boolean less(Comparable k1, Comparable k2)
-  {
-    return k1.compareTo(k2) < 0;
-  }
+		if(i <= root.count && key == root.key[i])//obviously if key is in node
+							                     //we went to return node.
+		{
 
-  private boolean eq(Comparable k1, Comparable k2) {
-    return k1.compareTo(k2) == 0;
-  }
- 
+
+			return root;
+		}
+
+		if(root.leaf)//since we've already checked root
+    			    //if it is leaf we don't have anything else to check
+        {
+
+			return null ;
+
+		}
+		else//else if it is not leave recurse down through ith child
+		{
+
+			return search(root.getChild(i),key);
+
+		}
+	}
+//  --------------------------------------------------------
+//  this will be the split method.  It will split node we  |
+//  want to insert into if it is full.                     |
+//  --------------------------------------------------------
+
+	public void split(BNode x, int i, BNode y)
+	{
+		BNode z = new BNode(order,null);//gotta have extra node if we are
+	                					//to split.
+
+		z.leaf = y.leaf;//set boolean to same as y
+
+		z.count = order - 1;//this is updated size
+
+		for(int j = 0; j < order - 1; j++)
+		{
+			z.key[j] = y.key[j+order]; //copy end of y into front of z
+
+		}
+		if(!y.leaf)//if not leaf we have to reassign child nodes.
+		{
+			for(int k = 0; k < order; k++)
+			{
+				z.child[k] = y.child[k+order]; //reassing child of y
+			}
+		}
+
+		y.count = order - 1; //new size of y
+
+		for(int j = x.count ; j> i ; j--)//if we push key into x we have
+		{				 //to rearrange child nodes
+
+			x.child[j+1] = x.child[j]; //shift children of x
+
+		}
+		x.child[i+1] = z; //reassign i+1 child of x
+
+		for(int j = x.count; j> i; j--)
+		{
+			x.key[j + 1] = x.key[j]; // shift keys
+		}
+		x.key[i] = y.key[order-1];//finally push value up into root.
+
+		y.key[order-1 ] = 0; //erase value where we pushed from
+
+		for(int j = 0; j < order - 1; j++)
+		{
+			y.key[j + order] = 0; //'delete' old values
+		}
+
+
+
+		x.count ++;  //increase count of keys in x
+	}
+
+// ----------------------------------------------------------
+// this will be insert method when node is not full.        |
+// ----------------------------------------------------------
+
+	public void nonfullInsert(BNode x, int key)
+	{
+		int i = x.count; //i is number of keys in node x
+
+		if(x.leaf)
+		{
+			while(i >= 1 && key < x.key[i-1])//here find spot to put key.
+			{
+				x.key[i] = x.key[i-1];//shift values to make room
+
+				i--;//decrement
+			}
+
+			x.key[i] = key;//finally assign value to node
+			x.count ++; //increment count of keys in this node now.
+
+		}
+
+
+		else
+		{
+			int j = 0;
+			while(j < x.count  && key > x.key[j])//find spot to recurse
+			{			             //on correct child  		
+				j++;
+			}
+
+		//	i++;
+
+			if(x.child[j].count == order*2 - 1)
+			{
+				split(x,j,x.child[j]);//call split on node x's ith child
+
+				if(key > x.key[j])
+				{
+					j++;
+				}
+			}
+
+			nonfullInsert(x.child[j],key);//recurse
+		}
+	}
+//--------------------------------------------------------------
+//this will be the method to insert in general, it will call    |
+//insert non full if needed.                                    |
+//--------------------------------------------------------------
+
+	public void insert(BTree t, int key)
+	{
+		BNode r = t.root;//this method finds the node to be inserted as 
+				 //it goes through this starting at root node.
+		if(r.count == 2*order - 1)//if is full
+		{
+			BNode s = new BNode(order,null);//new node
+
+			t.root = s;    //\
+	    			       // \	
+			s.leaf = false;//  \
+	    			       //   > this is to initialize node.
+			s.count = 0;   //  /
+	    			       // /	
+			s.child[0] = r;///
+
+			split(s,0,r);//split root
+
+			nonfullInsert(s, key); //call insert method
+		}
+		else
+			nonfullInsert(r,key);//if its not full just insert it
+	}
+
+// ---------------------------------------------------------------------------------
+// this will be method to print out a node, or recurses when root node is not leaf |
+// ---------------------------------------------------------------------------------
+
+
+	public void print(BNode n)
+	{
+		for(int i = 0; i < n.count; i++)
+		{
+			System.out.print(n.getValue(i)+" " );//this part prints root node
+		}
+
+		if(!n.leaf)//this is called when root is not leaf;
+		{
+
+			for(int j = 0; j <= n.count  ; j++)//in this loop we recurse
+			{				  //to print out tree in
+				if(n.getChild(j) != null) //preorder fashion.
+				{			  //going from left most
+				System.out.println();	  //child to right most
+				print(n.getChild(j));     //child.
+				}
+			}
+		}
+	}
+
+// ------------------------------------------------------------
+// this will be method to print out a node                    |
+// ------------------------------------------------------------
+
+	public void SearchPrintNode( BTree T,int x)
+	{
+		BNode temp= new BNode(order,null);
+
+		temp= search(T.root,x);
+
+		if (temp==null)
+		{
+
+		System.out.println("The Key does not exist in this tree");
+		}
+
+		else
+		{
+
+		print(temp);
+		}
+
+
+	}
+
+//--------------------------------------------------------------
+//this method will delete a key value from the leaf node it is |
+//in.  We will use the search method to traverse through the   |
+//tree to find the node where the key is in.  We will then     |
+//iterated through key[] array until we get to node and will   |
+//assign k[i] = k[i+1] overwriting key we want to delete and   |
+//keeping blank spots out as well.  Note that this is the most |
+//simple case of delete that there is and we will not have time|
+//to implement all cases properly.                             |
+//--------------------------------------------------------------
+
+       public void deleteKey(BTree t, int key)
+       {
+			       
+		BNode temp = new BNode(order,null);//temp Bnode
+			
+		temp = search(t.root,key);//call of search method on tree for key
+
+		if(temp.leaf && temp.count > order - 1)
+		{
+			int i = 0;
+
+			while( key > temp.getValue(i))
+			{
+				i++;
+			}
+			for(int j = i; j < 2*order - 2; j++)
+			{
+				temp.key[j] = temp.getValue(j+1);
+			}
+			temp.count --;
+		
+		}
+		else
+		{
+			System.out.println("This node is either not a leaf or has less than order - 1 keys.");
+		}
+       }
+
+
 }
-* **/
