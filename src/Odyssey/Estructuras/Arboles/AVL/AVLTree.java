@@ -137,7 +137,11 @@ public class AVLTree<T extends Comparable<T>> {
     AVLNode<T> aux = rightRotation(node);
     return aux;
   }
-  
+ /**
+  * Metodo para insertar un nodo
+  * @param data para indicar el valor del nodo nuevo a agregar
+  * pregunta si no hay raiz la crea, si no llama al metodo privado
+  */ 
   public void insert(T data)
   {
     AVLNode<T> newNode = new AVLNode(data);
@@ -148,7 +152,13 @@ public class AVLTree<T extends Comparable<T>> {
       root = insert(newNode, root);
     }
   }
-  
+  /**
+   * Logica de insertar nodo, hace comparaciones para ver donde se va ubicando y calcula
+   * de una vez el factor de balanceo
+   * @param newNode
+   * @param subTree
+   * @return 
+   */
   private AVLNode insert(AVLNode newNode, AVLNode subTree)
   {
     AVLNode<T> newFather = subTree;
@@ -192,12 +202,22 @@ public class AVLTree<T extends Comparable<T>> {
     }
     return newFather;
   }
-  
+  /**
+   * Metodo publico de eliminar, se manda el elemento a eliminar
+   * junto con la raiz al metodo privado que contiene la logica
+   * @param element 
+   */
   public void remove(T element)
   {
     root = remove(element, root);
   }
-  
+ /**
+  * Metodo privado de eliminar, lo busca, lo elimina y calcula el factor de 
+  * balanceo para ver si necesita hacer algun tipo de rotacion
+  * @param element
+  * @param node
+  * @return 
+  */ 
   private AVLNode<T> remove(T element, AVLNode<T> node)
   {
     if (node == null) {
@@ -224,12 +244,17 @@ public class AVLTree<T extends Comparable<T>> {
     
     return node;
   }
-  
+ /**
+  * Manda a llamar al metodo privado print con la raiz
+  */ 
   public void print()
   {
     print(root);
   }
-  
+/**
+ * Metodo privado de print, imprime el arbol, mientras lo va recorriendo
+ * @param node 
+ */  
   private void print(AVLNode<T> node)
   {
     if (node != null) {
