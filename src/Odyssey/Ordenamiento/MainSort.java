@@ -16,21 +16,21 @@ public class MainSort {
         
         ListaSimple listaP = new ListaSimple();
         
-        listaP.add(34);
-        listaP.add(4);
-        listaP.add(36);
-        listaP.add(30);
-        listaP.add(27);
-        listaP.add(16);
-        listaP.add(2);
-        listaP.add(4);
-        listaP.add(78);
+        listaP.add("34");
+        listaP.add("4");
+        listaP.add("36");
+        listaP.add("30");
+        listaP.add("27");
+        listaP.add("16");
+        listaP.add("2");
+        listaP.add("4");
+        listaP.add("78");
         
         listaP.print();
         
         BubbleSort.sort(listaP);
         
-        listaP.print();
+        
                 
     }
     
