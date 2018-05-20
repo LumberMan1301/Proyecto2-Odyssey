@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Odyssey : Form
+    public partial class Login : Form
     {
-        public Odyssey()
+        public Login()
         {
             InitializeComponent();
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -32,9 +22,11 @@ namespace WindowsFormsApp1
 
         }
 
-        private void Odyssey_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            Registro abrir = new Registro();
+            abrir.Show();
+            this.Hide();
         }
     }
 }
