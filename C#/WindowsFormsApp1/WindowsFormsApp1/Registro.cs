@@ -39,9 +39,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Odyssey abrir = new Odyssey();
-            abrir.Show();
-            this.Hide();
+
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -51,7 +49,9 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Odyssey abrir = new Odyssey();
+            abrir.Show();
+            this.Hide();
         }
     }
 }
