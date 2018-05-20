@@ -37,14 +37,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Snap ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(26, 343);
+            this.button1.Location = new System.Drawing.Point(63, 339);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 62);
             this.button1.TabIndex = 1;
@@ -75,7 +74,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(78, 32);
             this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
+            this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -84,7 +83,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(82, 31);
             this.button3.TabIndex = 6;
-            this.button3.Text = "button3";
+            this.button3.Text = "Ordenar";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -120,6 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(622, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -131,6 +131,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Odyssey";
             this.Text = "Odyssey";
+            this.Load += new System.EventHandler(this.Odyssey_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,6 +147,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }

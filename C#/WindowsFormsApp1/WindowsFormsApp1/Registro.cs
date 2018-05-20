@@ -39,7 +39,9 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Login abrir = new Login();
+            abrir.Show();
+            this.Hide();
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
