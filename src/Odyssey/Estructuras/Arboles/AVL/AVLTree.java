@@ -1,7 +1,10 @@
 package Odyssey.Estructuras.Arboles.AVL;
 
-import java.io.PrintStream;
-
+/**
+ * Arbol AVL
+ * @author HP_15
+ * @param <T> 
+ */
 public class AVLTree<T extends Comparable<T>> {
   public AVLNode<T> root;
   
@@ -12,12 +15,23 @@ public class AVLTree<T extends Comparable<T>> {
   {
     return root;
   }
-  
+  /**
+   * Metodo publico de Contains, manda al metodo privado que contiene 
+   * la logica el nodo a buscar junto con la raiz del arbol
+   * @param data
+   * @return 
+   */
   public boolean contains(T data)
   {
     return contains(data, root);
   }
-  
+  /**
+   * Metodo privado de contains, hace comparaciones con los nodos del arbol,
+   * va viendo si no es el nodo, si son sus hijos
+   * @param element
+   * @param node
+   * @return 
+   */
   private boolean contains(T element, AVLNode<T> node)
   {
     if (node == null)
@@ -50,7 +64,11 @@ public class AVLTree<T extends Comparable<T>> {
     return getElement(element, node.getLeft());
   }
   
-
+/**
+ * Calcula el facto de balanceo de los nodos
+ * @param node
+ * @return 
+ */
   private int getBalanceFactor(AVLNode<T> node)
   {
     if (node == null) {
@@ -59,7 +77,12 @@ public class AVLTree<T extends Comparable<T>> {
     return node.getBalanceFactor();
   }
   
-
+/**
+ * Cuando un nodo es agregado si se desbalancea el arbol depende, hace
+ * rotacion izquierda
+ * @param node
+ * @return 
+ */
   private AVLNode<T> leftRotation(AVLNode<T> node)
   {
     AVLNode<T> aux = node.getLeft();
@@ -71,7 +94,12 @@ public class AVLTree<T extends Comparable<T>> {
     
     return aux;
   }
-  
+  /**
+ * Cuando un nodo es agregado si se desbalancea el arbol depende, hace
+ * rotacion derecha
+ * @param node
+ * @return 
+ */
   private AVLNode<T> rightRotation(AVLNode<T> node)
   {
     AVLNode<T> aux = node.getRight();
@@ -85,7 +113,11 @@ public class AVLTree<T extends Comparable<T>> {
   }
   
 
-
+/**
+ * Rotacion doble izquierda
+ * @param node
+ * @return 
+ */
   private AVLNode<T> doubleLeftRotation(AVLNode<T> node)
   {
     node.setLeft(rightRotation(node.getLeft()));
@@ -94,7 +126,11 @@ public class AVLTree<T extends Comparable<T>> {
   }
   
 
-
+/**
+ * Rotacion doble derecha
+ * @param node
+ * @return 
+ */
   private AVLNode<T> doubleRightRotation(AVLNode<T> node)
   {
     node.setRight(leftRotation(node.getRight()));

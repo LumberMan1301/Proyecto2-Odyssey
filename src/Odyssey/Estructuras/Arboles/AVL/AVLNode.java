@@ -1,5 +1,9 @@
 package Odyssey.Estructuras.Arboles.AVL;
-
+/**
+ * Nodo del arbol AVL
+ * @author HP_15
+ * @param <T> 
+ */
 public class AVLNode<T extends Comparable<T>>
 {
   public T data;
@@ -8,7 +12,11 @@ public class AVLNode<T extends Comparable<T>>
   public AVLNode<T> right;
   
   public AVLNode() {}
-  
+  /**
+   * Constructor del nodo del arbol avl, con un facto de
+   * balanceo de 0 inicialmente
+   * @param data 
+   */
   public AVLNode(T data)
   {
     this.data = data;
