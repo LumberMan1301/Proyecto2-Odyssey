@@ -1,6 +1,9 @@
 package Odyssey.Estructuras.Listas;
 
-
+/**
+ * Estructura de datos, lista simple enlazada
+ * @param <T> para generics
+ */
 public class ListaSimple<T> { private NodeLista<T> head;
   private int capacidad;
   
@@ -8,7 +11,10 @@ public class ListaSimple<T> { private NodeLista<T> head;
     head = null;
     capacidad = 0;
   }
-  
+  /**
+     * Agrega un nuevo nodo al final de la lista existente, o al principio si esta vacia
+     * @param data para darle el valor al nuevo nodo a agregar
+     */
   public void add(T data) {
     if (capacidad == 0) {
       NodeLista<T> aux = new NodeLista(data);
@@ -26,7 +32,10 @@ public class ListaSimple<T> { private NodeLista<T> head;
       capacidad += 1;
     }
   }
-  
+  /**
+     * Elimina el nodo de una lista por posicion
+     * @param posicion para indicar el nodo que se quiere eliminar
+     */
   public void remove(int posicion)
   {
     int pos_aux = posicion;
@@ -74,7 +83,11 @@ public class ListaSimple<T> { private NodeLista<T> head;
       }
     }
   }
-  
+  /**
+     * Devuelve el dato del en la posicion de la lista a elegir
+     * @param i para indicar la posicion de la lista a devolver el dato del nodo
+     * @return el valor del nodo en la posicion indicada
+     */
   public T get(int i) {
     NodeLista<T> aux = getHead();
     int x = 0;
@@ -88,7 +101,11 @@ public class ListaSimple<T> { private NodeLista<T> head;
     }
     return aux.getData();
   }
-  
+  /**
+     * Obtiene el nodo segun la referencia
+     * @param i indice de busqueda
+     * @return el nodo que coincide con el requerido
+     */
   public NodeLista<T> getNode(int i)
   {
     NodeLista<T> aux = getHead();
@@ -112,7 +129,9 @@ public class ListaSimple<T> { private NodeLista<T> head;
   public void setHead(NodeLista<T> head) {
     this.head = head;
   }
-  
+   /**
+      * Vacia la lista
+      */ 
   public void clear() {
     head = null;
     capacidad = 0;
@@ -122,7 +141,11 @@ public class ListaSimple<T> { private NodeLista<T> head;
   {
     return capacidad;
   }
-  
+  /**
+   * Busca, recorriendo la lista, el dato que quiere encontrar
+   * @param dato para buscar en la lista el dato
+   * @return 
+   */
   public T find(T dato) {
     NodeLista<T> aux = head;
     while (dato != aux.getData()) {
@@ -130,7 +153,10 @@ public class ListaSimple<T> { private NodeLista<T> head;
     }
     return aux.getData();
   }
-  
+  /**
+       * Verifica si la lista esta vacia
+       * @return true o false si esta vacia
+       */
   public boolean isEmpty()
   {
     if (capacidad == 0) {
@@ -154,9 +180,11 @@ public class ListaSimple<T> { private NodeLista<T> head;
         System.out.println(aux.getData() + "]");
     }
  }
-  
-
-
+  /**
+   * Hace intercambios entre las posiciones dadas
+   * @param i1 primera posicion a intercambiar
+   * @param i2 segunda posicion a intercambiar
+   */
   public void swap(int i1, int i2)
   {
     T i = get(i1);
