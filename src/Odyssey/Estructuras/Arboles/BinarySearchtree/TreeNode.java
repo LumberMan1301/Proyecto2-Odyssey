@@ -1,14 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Odyssey.Estructuras.Arboles.BinarySearchTree;
+/**
+ * Clase que contiene el Nodo del ABB
+ * @author 13mariano
+ * @param <T> 
+ */
 public class TreeNode<T extends Comparable<T>> {
     public T data;
     public TreeNode<T> left;
     public TreeNode<T> right;
-
+/**
+ * Constructores de la clase
+ * @param data 
+ */
     public TreeNode(T data) {
         this(data, (TreeNode)null, (TreeNode)null);
     }
@@ -22,7 +25,10 @@ public class TreeNode<T extends Comparable<T>> {
         this.left = left;
         this.right = right;
     }
-
+/**
+ * metodo para obtener la informacion del nodo
+ * @return 
+ */
     public T getData() {
         return this.data;
     }

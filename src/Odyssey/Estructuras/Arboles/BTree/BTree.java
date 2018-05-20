@@ -1,31 +1,23 @@
 package Odyssey.Estructuras.Arboles.BTree;
-
-//-----------------------------------------------------------------------
-//this will be the BTree class which all methods being performed on tree|
-//are located. This will call methods in BNode.java and the methods in  |
-//this class will be used to do operations on a tree object.            |                                                                                      |
-//-----------------------------------------------------------------------
-//This is class project for CS380 Data Structures and Algorithm Analysis|
-//the basic format of this program is derived from class notes and      |
-//psuedocode in Intoduction to Algorithms, 2nd Edition, Cormen et.al.   |
-//MIT Press, Cambridge.                                                 |
-//Jeremy Phelps and Kris                                                |
-//-----------------------------------------------------------------------
-
+/**
+ * Clase del arbol B
+ * @author 13mariano
+ */
 public class BTree
 {
 
-// here are variables available to tree
+/**
+ * atributos de la clase arbol B
+ */
 
 	static int order; // order of tree
-
 	BNode root;  //every tree has at least a root node
 
 
-// ---------------------------------------------------------
-// here is the constructor for tree                        |
-// ---------------------------------------------------------
-
+/**
+ * Constructor del arbol B
+ * @param order 
+ */
 
 	public BTree(int order)
 	{

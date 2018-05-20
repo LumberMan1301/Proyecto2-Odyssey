@@ -1,20 +1,33 @@
 
 package Odyssey.Estructuras.Arboles.BinarySearchTree;
 
-
+/**
+ * Clase del arbol binario de busqueda
+ * @author 13mariano
+ * @param <T> 
+ */
 public class BinarySearchTree<T extends Comparable<T>> {
     public TreeNode<T> root;
-
+/**
+ * Constructor de la clase
+ */
     public BinarySearchTree()
     {
         this.root = null;
     }
-
+/**
+ * metodo para obtener al raiz
+ * @return 
+ */
     public TreeNode<T> getRoot() {
         System.out.println(root.getData());
         return this.root;
     }
-
+/**
+ * metodo para saber si contiene  un valor en especifico
+ * @param data
+ * @return 
+ */
     public boolean contains(T data)
     {
         return contains(data, this.root);
@@ -36,7 +49,11 @@ public class BinarySearchTree<T extends Comparable<T>> {
         System.out.println("no contiene a: "+ element);
         return false;
     }
-
+/**
+ * metodo para obtener un elemento
+ * @param element
+ * @return 
+ */
     public TreeNode<T> getElement(T element)
     {
         return getElement(element, this.root);
@@ -53,7 +70,10 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
         return getElement(element, node.getLeft());
     }
-
+/**
+ * metodo para insertar un nuevo elemento
+ * @param data 
+ */
     public void insert(T data) {
         TreeNode<T> nodeAux = new TreeNode(data);
         if (this.root == null) {
@@ -85,7 +105,10 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
         return nodeAUX;
     }
-
+/**
+ * metodo para remover un elemento
+ * @param element 
+ */
     public void remove(T element)
     {
         this.root = remove(element, this.root);
@@ -105,7 +128,9 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
         return node;
     }
-
+/**
+ * metodo para imprimir el arbol
+ */
     public void print()
     {
         print(this.root);
