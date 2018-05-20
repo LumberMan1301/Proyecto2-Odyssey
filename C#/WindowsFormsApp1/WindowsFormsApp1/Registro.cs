@@ -53,7 +53,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             // connect to server
             TcpClient client = new TcpClient("192.168.100.15", 1133);
 
@@ -67,12 +67,11 @@ namespace WindowsFormsApp1
 
             NetworkStream stream = client.GetStream();
             stream.Write(buf, 0, name.Length + 1);
-
-=======
+            
             Odyssey abrir = new Odyssey();
             abrir.Show();
             this.Hide();
->>>>>>> 6312c4b0b900f97069818b4cd9ef494d544e3bc8
+
         }
     }
 }
