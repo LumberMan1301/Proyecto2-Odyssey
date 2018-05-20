@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -17,11 +17,15 @@ public class Usuario {
     private ListaSimple <String> listaAmigos = new ListaSimple<String>();
 
     public Usuario(String nombreDeUsuario, String nombre, int edad, String Contrasena) {
-        this.nombreDeUsuario = nombreDeUsuario;
-        this.nombre = nombre;
-        this.edad = edad;
-        this.Contrasena = Contrasena;
-        Usuarios.agregarUsuario(this);
+        if(Usuarios.agregarUsuario(this)==true){
+            System.out.println("El usuario ya existe");
+        }else{
+            this.nombreDeUsuario = nombreDeUsuario;
+            this.nombre = nombre;
+            this.edad = edad;
+            this.Contrasena = Contrasena;
+            System.out.println("Se ha creado el usuario");
+        }    
     }
     
 
