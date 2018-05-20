@@ -9,4 +9,19 @@ C:\Users\HP_15\Source\Repos\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsAp
 C:\Users\HP_15\Source\Repos\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\HP_15\Source\Repos\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Registro.resources
 C:\Users\HP_15\Source\Repos\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Odyssey.resources
+<<<<<<< HEAD
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Registro.resources
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Odyssey.resources
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+=======
 C:\Users\HP_15\Source\Repos\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Login.resources
+>>>>>>> 6312c4b0b900f97069818b4cd9ef494d544e3bc8
+C:\Users\maria\Documents\NetBeansProjects\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Login.resources

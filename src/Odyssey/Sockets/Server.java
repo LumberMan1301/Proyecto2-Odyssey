@@ -19,7 +19,7 @@ public class Server
 {
     public static void iniciar() throws IOException
     {
-        ServerSocket serversocket = new ServerSocket(9000);
+        ServerSocket serversocket = new ServerSocket(1133);
         System.out.println("Contacts server is ready ....");
 
         while (true)
