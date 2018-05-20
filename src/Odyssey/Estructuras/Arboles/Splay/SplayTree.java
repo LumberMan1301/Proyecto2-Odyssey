@@ -1,31 +1,48 @@
 package Odyssey.Estructuras.Arboles.Splay;
-
-
-import java.io.PrintStream;
+/**
+ * Clase del Splay Tree
+ * @author 13mariano
+ * @param <Key>
+ * @param <Value> 
+ */
 
 public class SplayTree<Key extends Comparable<Key>, Value>
 {
   public SplayTree<Key, Value>.Node root;
-
+/**
+ * clase que contiene el nodo del arbol splay
+ */
   private class Node
   {
     public Key key;
     public Value value;
     public SplayTree<Key, Value>.Node left;
     public SplayTree<Key, Value>.Node right;
-
+/** 
+ * constructor de la clase nodo
+ * @param value
+ * @param key 
+ */
     public Node(Key value, Value key)
     {
       this.key = (Key) key;
       this.value = (Value) value;
     }
   }
-
+/**
+ * metodo para verificar si el arbol contiene
+ * @param key
+ * @return 
+ */
   public boolean contains(Key key)
   {
     return getElement(key) != null;
   }
-
+/**
+ * metodo para obtener el elemento
+ * @param key
+ * @return 
+ */
   public Value getElement(Key key)
   {
     this.root = splay(this.root, key);
@@ -36,7 +53,11 @@ public class SplayTree<Key extends Comparable<Key>, Value>
     }
     return null;
   }
-
+/**
+ * metodo para insertar un elemento
+ * @param key
+ * @param value 
+ */
   public void insert(Key key, Value value)
   {
     if (this.root == null)
@@ -68,7 +89,10 @@ public class SplayTree<Key extends Comparable<Key>, Value>
       this.root.value = value;
     }
   }
-
+/**
+ * metodo para remover un nodo
+ * @param key 
+ */
   public void remove(Key key)
   {
     if (this.root == null) {
@@ -146,7 +170,9 @@ public class SplayTree<Key extends Comparable<Key>, Value>
     }
     return h;
   }
-
+/**
+ * metodo para obtener el alto
+  */
   public int height()
   {
     return height(this.root);
@@ -159,12 +185,18 @@ public class SplayTree<Key extends Comparable<Key>, Value>
     }
     return 1 + Math.max(height(x.left), height(x.right));
   }
-
+/**
+ * metodo para obtener el tamanio
+ * @return 
+ */
   public int size()
   {
     return size(this.root);
   }
-
+/**
+ * metodo para verificar que esta vacio
+ * @return 
+ */
   public boolean isEmpty()
   {
     return size() == 0;
@@ -177,7 +209,11 @@ public class SplayTree<Key extends Comparable<Key>, Value>
     }
     return 1 + size(x.left) + size(x.right);
   }
-
+/**
+ * metodo para hacer rotaciones
+ * @param h
+ * @return 
+ */
   private SplayTree<Key, Value>.Node rotateRight(SplayTree<Key, Value>.Node h)
   {
     SplayTree<Key, Value>.Node x = h.left;
@@ -185,7 +221,11 @@ public class SplayTree<Key extends Comparable<Key>, Value>
     x.right = h;
     return x;
   }
-
+/**
+ * metodo para hacer rotaciones
+ * @param h
+ * @return 
+ */
   private SplayTree<Key, Value>.Node rotateLeft(SplayTree<Key, Value>.Node h)
   {
     SplayTree<Key, Value>.Node x = h.right;
@@ -193,7 +233,9 @@ public class SplayTree<Key extends Comparable<Key>, Value>
     x.left = h;
     return x;
   }
-
+/**
+ * metodo para imprimir
+ */
   public void print()
   {
     print(this.root);
