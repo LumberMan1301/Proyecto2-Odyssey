@@ -139,26 +139,21 @@ public class ListaSimple<T> { private NodeLista<T> head;
     return false;
   }
   
-  public String print()
+  public void print()
   {
-    String fin = "[";
+    
     NodeLista<T> aux = head;
     if (aux == null) {
-      fin = fin + "]";
-      return fin;
-    }
-    while (aux.getNext() != null) {
-      if (aux.getNext() == null) {
-        fin = fin + aux.getData().toString();
+        System.out.println("Lista Vacia");
+    }else{
+        System.out.print("[");
+    for(int i=0; i<this.size()-1;i++){
+        System.out.print(this.get(i) + ",");
         aux = aux.getNext();
-      } else {
-        fin = fin + aux.getData().toString() + ",";
-        aux = aux.getNext();
-      }
+        }
+        System.out.println(aux.getData() + "]");
     }
-    fin = fin + aux.getData().toString() + "]";
-    return fin;
-  }
+ }
   
 
 
