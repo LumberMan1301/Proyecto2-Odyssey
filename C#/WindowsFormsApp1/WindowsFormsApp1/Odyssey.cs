@@ -30,6 +30,7 @@ namespace WindowsFormsApp1
             // connect to server
             TcpClient client = new TcpClient("192.168.100.15", 1133);
 
+            //...
 
             String name = "Cargando Canciones";
 
