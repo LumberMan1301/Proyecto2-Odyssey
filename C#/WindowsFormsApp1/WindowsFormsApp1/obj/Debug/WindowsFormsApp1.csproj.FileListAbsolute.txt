@@ -9,3 +9,4 @@ C:\Users\HP_15\Source\Repos\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsAp
 C:\Users\HP_15\Source\Repos\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\HP_15\Source\Repos\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Registro.resources
 C:\Users\HP_15\Source\Repos\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Odyssey.resources
+C:\Users\HP_15\Source\Repos\Proyecto2-Odyssey\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Login.resources
